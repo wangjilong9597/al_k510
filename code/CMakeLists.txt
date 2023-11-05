@@ -1,0 +1,30 @@
+cmake_minimum_required(VERSION 3.2)
+project(ai C CXX)
+
+#set(DEMO_ROOT "${PROJECT_SOURCE_DIR}/../crb_demo")
+set(CMAKE_C_FLAGS_DEBUG "-O0 -g3")
+set(CMAKE_C_FLAGS_RELEASE "-O2 -s")
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g3")
+set(CMAKE_CXX_FLAGS_RELEASE "-O2 -s")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
+
+set(input imx219_1080x1920_0.conf imx219_0.conf imx219_1.conf video_192x320.conf video_object_detect_320.conf video_object_detect_432x368.conf video_object_detect_512.conf video_object_detect_640x480.conf video_object_detect_320x320.conf video_object_detect_480x640.conf video_object_detect_640.conf)
+install(PROGRAMS ${input} DESTINATION exe)
+
+add_subdirectory(face_detect)
+add_subdirectory(face_landmarks)
+add_subdirectory(object_detect)
+add_subdirectory(face_alignment)
+add_subdirectory(face_expression)
+add_subdirectory(head_pose_estimation)
+add_subdirectory(face_recog)
+add_subdirectory(simple_pose)
+add_subdirectory(openpose)
+add_subdirectory(person_detect)
+add_subdirectory(hand_image_classify)
+add_subdirectory(license_plate_recog)
+add_subdirectory(self_learning)
+add_subdirectory(object_detect_demo)
+add_subdirectory(retinaface_mb_320)
+
+
