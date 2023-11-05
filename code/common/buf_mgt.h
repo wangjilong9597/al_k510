@@ -30,7 +30,7 @@
 #include <queue>
 
 typedef struct {
-    std::mutex mtx;
+    //std::mutex mtx;
     std::queue<void *> valid_q;
     std::queue<void *> idle_q;
     void *pdata_last = (void *)-1;
